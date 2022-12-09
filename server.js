@@ -76,6 +76,7 @@ io.on('connection', (socket) => {
     
     
     io.in(roomId).emit('changeResto', list)
+    io.in(roomId).emit('updateRoom', rooms.find(e => (e.id === roomId)))
   });
 
   socket.on('changeUserCoord', (roomId, user, coord) => {
